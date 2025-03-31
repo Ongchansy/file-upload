@@ -110,6 +110,10 @@ app.delete('/file/:fileId', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World! This is the Appwrite file upload server.');
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
