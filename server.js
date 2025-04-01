@@ -3,6 +3,7 @@ const multer = require('multer');
 const sdk = require('node-appwrite');
 const { InputFile } = require('node-appwrite/file');
 const path = require('path');
+const cors = require('cors');
 
 // Initialize Appwrite client
 const client = new sdk.Client()
@@ -14,6 +15,7 @@ const storage = new sdk.Storage(client);
 
 // Initialize Express app
 const app = express();
+app.use(cors());
 const port = 3000;
 
 // Set up Multer to handle file uploads
